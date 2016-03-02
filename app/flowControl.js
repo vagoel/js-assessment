@@ -10,6 +10,21 @@ exports.flowControlAnswers = {
     //
     // otherwise the function should return the number, or false if no number
     // was provided or the value provided is not a number
+    if(arguments.length==0||typeof num!=='number')return false;
+    var divisibleBy=function(by){
+        return num%by==0;
+    }
 
+    if(divisibleBy(3)&&divisibleBy(5)){
+        return 'fizzbuzz'
+    }else if(divisibleBy(3)){
+        return 'fizz'
+    }
+    else if(divisibleBy(5)){
+        return 'buzz'
+    }
+    else{
+        return num;
+    }
   }
 };
